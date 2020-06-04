@@ -18,9 +18,6 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
 var  movies:Movie[]=[];
-// var movies=[];
-
-var hi:string;
 
 app.get("/get-movies", (req, res) => {
 return res.send(movies);
@@ -29,7 +26,7 @@ return res.send(movies);
 app.use('/',(req,res,next)=>{
   console.log('Connected to Node.js server.');
   res.setHeader('Content-Type', 'text/html');
-  res.send('<h1>hello world</h1>')
+  res.send('<h1>Hello from Node.js!</h1>')
   next();
 });
 

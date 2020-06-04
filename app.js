@@ -10,15 +10,13 @@ var port = process.env.PORT || 3000;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 var movies = [];
-// var movies=[];
-var hi;
 app.get("/get-movies", function (req, res) {
     return res.send(movies);
 });
 app.use('/', function (req, res, next) {
     console.log('Connected to Node.js server.');
     res.setHeader('Content-Type', 'text/html');
-    res.send('<h1>hello world</h1>');
+    res.send('<h1>Hello from Node.js!</h1>');
     next();
 });
 mongo.connect(url, function (err, client) {
